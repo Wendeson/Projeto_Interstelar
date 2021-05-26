@@ -20,7 +20,7 @@ public class Jogador {
 	}
 	
 	public void load() {
-		ImageIcon referencia = new ImageIcon("res\\disco voador.png");
+		ImageIcon referencia = new ImageIcon("res\\navinha.png");
 		imagem = referencia.getImage();
 		altura = imagem.getHeight(null);
 		largura = imagem.getWidth(null);
@@ -39,13 +39,13 @@ public class Jogador {
 			dy=-3;
 		}
 		if(codigo == KeyEvent.VK_DOWN) {
-			dy=-3;	
+			dy=3;	
 		}
 		if(codigo == KeyEvent.VK_LEFT) {
-			dx=3;	
+			dx=-3;	
 		}
 		if(codigo == KeyEvent.VK_RIGHT) {
-			dx=-3;	
+			dx=3;	
 		}
 	}
 	
@@ -65,6 +65,21 @@ public class Jogador {
 			dx= 0;	
 		}
 	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public Image getImagem() {
+		return imagem;
+	}
 	
 	
 }
+
+
+
