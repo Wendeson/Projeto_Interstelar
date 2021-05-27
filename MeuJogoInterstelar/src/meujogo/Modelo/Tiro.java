@@ -23,7 +23,7 @@ public class Tiro {
 	}
 	
 	public void load() {
-		ImageIcon referencia = new ImageIcon("res\\ laser.png");
+		ImageIcon referencia = new ImageIcon("res\\laser2.png");
 		imagem = referencia.getImage();
 		
 		this.largura = imagem.getWidth(null);
@@ -59,6 +59,10 @@ public class Tiro {
 
 	public int getY() {
 		return y;
+	}
+
+	public Image getImagem() {
+		return imagem;
 	}
 	
 	
