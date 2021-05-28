@@ -1,6 +1,7 @@
 package meujogo.Modelo;
 
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,12 @@ public class Jogador {
 	private Image imagem;
 	private int altura, largura;
 	private List <Tiro> tiros;
+	private	boolean isVisivel;
 	
 	public Jogador() {
 		this.x = 100;
 		this.y = 100;
+		isVisivel = true;
 		
 		tiros = new ArrayList<Tiro>();
 	}
@@ -40,6 +43,10 @@ public class Jogador {
 	public void tiroSimples() {
 		this.tiros.add(new Tiro(x+largura, y + (altura/2)));
 		
+	}
+	
+	public Rectangle getBounds() {
+		return new Rectangle (x,y,largura,altura);
 	}
 	
 	public void keyPressed(KeyEvent tecla) {
@@ -78,6 +85,16 @@ public class Jogador {
 		if(codigo == KeyEvent.VK_RIGHT) {
 			dx= 0;	
 		}
+	}
+
+	
+	
+	public boolean isVisivel() {
+		return isVisivel;
+	}
+
+	public void setVisivel(boolean isVisivel) {
+		this.isVisivel = isVisivel;
 	}
 
 	public int getX() {

@@ -5,26 +5,26 @@ import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
-public class Tiro {
+public class Inimigo1 {
 	
-	/*fazendo a nave a atira*/
+	/*Criando o Inimigo*/
 	private Image imagem;
 	private int x, y;
 	private int largura, altura;
 	private boolean isVisivel;
 	
-	private static final int LARGURA = 938;
+	//private static final int LARGURA = 938;
 	private static int VELOCIDADE = 2;
 	
 	
-	public Tiro(int x, int y) {
+	public Inimigo1(int x, int y) {
 		this.x = x;
 		this.y = y;
 		isVisivel = true;
 	}
 	
 	public void load() {
-		ImageIcon referencia = new ImageIcon("res\\laser2.png");
+		ImageIcon referencia = new ImageIcon("res\\Inimigo1.png");
 		imagem = referencia.getImage();
 		
 		this.largura = imagem.getWidth(null);
@@ -32,10 +32,10 @@ public class Tiro {
 	}
 	
 	public void update() {
-		this.x += VELOCIDADE;
-		if (this.x > LARGURA) {
-			isVisivel = false;
-		}
+		this.x -= VELOCIDADE;
+		//if (this.x > LARGURA) {
+			//isVisivel = false;
+		//}
 	}
 	
 	public Rectangle getBounds() {
